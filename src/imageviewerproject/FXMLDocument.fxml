@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="703.0" prefWidth="1091.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imageviewerproject.FXMLDocumentController">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="1091.0" BorderPane.alignment="CENTER">
+         <children>
+            <ButtonBar prefHeight="57.0" prefWidth="427.0">
+               <buttons>
+                  <Button id="btnLoad" fx:id="btnLoad" mnemonicParsing="false" prefHeight="27.0" prefWidth="141.0" text="Load images...">
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </opaqueInsets>
+                  </Button>
+                  <Button id="btnPrevious" fx:id="btnPrevious" mnemonicParsing="false" text="Previous">
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </opaqueInsets>
+                  </Button>
+                  <Button id="btnNext" fx:id="btnNext" mnemonicParsing="false" text="Next" />
+               </buttons>
+            </ButtonBar>
+            <ButtonBar prefHeight="57.0" prefWidth="654.0">
+              <buttons>
+                <Button mnemonicParsing="false" onAction="#startShow" text="Start show" />
+                  <Slider fx:id="delaySlider" blockIncrement="250.0" majorTickUnit="250.0" max="2000.0" min="100.0" minorTickCount="100" prefHeight="13.0" prefWidth="140.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1000.0" />
+                  <Button mnemonicParsing="false" onAction="#stopShow" text="Stop show" />
+              </buttons>
+            </ButtonBar>
+         </children>
+         <opaqueInsets>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </opaqueInsets>
+      </HBox>
+   </top>
+   <center>
+      <BorderPane prefHeight="726.0" prefWidth="1090.0" style="-fx-border-width: 2 0 0; -fx-border-color: black;" BorderPane.alignment="CENTER">
+         <center>
+            <ImageView fx:id="imageView" fitHeight="575.0" fitWidth="1090.0" pickOnBounds="true" preserveRatio="true" />
+         </center>
+         <top>
+            <Label fx:id="pathLabel" alignment="CENTER" prefHeight="70.0" prefWidth="985.0" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+         </top>
+      </BorderPane>
+   </center>
+</BorderPane>
